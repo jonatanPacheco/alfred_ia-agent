@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Orbitron:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <title>Alfred IA Agent</title>
+  </head>
+  <body>
+    <header>
+      <h3 class="titulo">Alfred IA Agent</h3>
+    </header>
+    <section class="secao-principal">
+      <main class="visual-container">
+        <div class="tela">
+          <div id="tela-status">Aguardando comando...</div>
+        </div>
+      </main>
+      <nav class="controls-nav">
+        <button id="startBtn" class="btn">Gravar</button>
+        <button id="stopBtn" class="btn hidden" disabled>Parar/enviar</button>
+      </nav>
+    </section>
+    <footer class="rodape">
+      <img src="./src/img/logo2-JDev.jpg" alt="" class="logo" />
+    </footer>
+    <script src="./src/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+:root {
+  --cor-primaria: #0f172a;
+  --cor-secundaria: #0743a3;
+  --cor-terciaria: #000000;
+  --font-color: #ffffff;
+  --cor-accent: #3b82f6;
+  --cor-sucesso: #22c55e;
+  --cor-erro: #ef4444;
+  --gradient-color: #3b82f6;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--font-color);
+  height: 100vh;
+  background: url(./img/bg-alfred.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+header {
+  text-align: center;
+  background-color: var(--cor-primaria);
+  width: 100%;
+}
+
+.secao-principal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  height: 100%;
+  width: 100%;
+}
+
+.visual-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 75%;
+}
+
+.tela {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 80%;
+  border: 1px solid var(--gradient-color);
+  border-radius: 20px;
+  box-shadow: 0 0 40px var(--gradient-color);
+  background-color: var(--cor-primaria);
+}
+
+#tela-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--gradient-color) 0%,
+    transparent 70%
+  );
+  box-shadow: 0 0 50px var(--gradient-color);
+  animation: pulse 2s infinite;
+  height: 40%;
+  width: 40%;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+.controls-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 15%;
+  width: 70%;
+  margin: 0 auto;
+  border: 3px ridge var(--cor-primaria);
+  border-radius: 10px 40px 10px 40px;
+  background-color: var(--cor-primaria);
+  box-shadow: 0px 40px 100px var(--cor-terciaria);
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border: 5px ridge var(--gradient-color);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  height: 2rem;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  border: groove var(--gradient-color);
+}
+
+#startBtn {
+  background-color: var(--cor-accent);
+  color: var(--font-color);
+}
+#stopBtn {
+  background-color: var(--cor-erro);
+  color: var(--font-color);
+}
+
+.hidden {
+  display: none;
+}
+
+.rodape {
+  text-align: center;
+  height: 4rem;
+  padding: 2rem;
+}
+
+.logo {
+  width: 80px;
+  box-shadow: 0px 100px 100px var(--cor-terciaria);
+  border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  .secao-principal {
+    width: 60%;
+  }
+
+  .tela-status {
+    height: 30%;
+    width: 10%;
+  }
+
+  .rodape {
+    padding: 3rem;
+  }
+
+  .logo {
+    width: 5rem;
+  }
+}
