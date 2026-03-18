@@ -1,12 +1,14 @@
 :root {
   --cor-primaria: #0f172a;
   --cor-secundaria: #0743a3;
-  --cor-terciaria: #000000;
+  --cor-terciaria: #010101;
   --font-color: #ffffff;
   --cor-accent: #3b82f6;
   --cor-sucesso: #22c55e;
   --cor-erro: #ef4444;
   --gradient-color: #3b82f6;
+  --led-color: #0f0;
+  --led-error: #f00;
 }
 
 body {
@@ -49,44 +51,38 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 70%;
-  height: 80%;
+  flex-direction: column;
+  height: 100%;
   border: 1px solid var(--gradient-color);
   border-radius: 20px;
   box-shadow: 0 0 40px var(--gradient-color);
-  background-color: var(--cor-primaria);
+  color: var(--led-color);
 }
 
-#tela-status {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    var(--gradient-color) 0%,
-    transparent 70%
-  );
-  box-shadow: 0 0 50px var(--gradient-color);
-  animation: pulse 2s infinite;
-  height: 40%;
-  width: 40%;
+#led-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2px;
+  width: 200px;
+  margin: 0 auto 15px;
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
+.led {
+  aspect-ratio: 1/1;
+  background-color: var(--cor-terciaria);
+  border-radius: 2px;
+}
+
+.led.on {
+  background-color: var(--led-color);
+  box-shadow: 0 0 5px var(--led-color);
+}
+.led.error {
+  background-color: var(--led-error);
+  box-shadow: 0 0 5px var(--led-error);
+}
+.hidden {
+  display: none;
 }
 
 .controls-nav {
@@ -131,7 +127,7 @@ header {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .rodape {
