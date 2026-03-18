@@ -1,3 +1,7 @@
+window.speechSynthesis.onvoiceschanged = () => {
+  window.speechSynthesis.getVoices();
+};
+
 const GRID_SIZE = 12;
 const leds = [];
 const gridElement = document.getElementById("led-grid");
@@ -57,6 +61,23 @@ async function alfredFala(texto) {
   return new Promise((resolve) => {
     const msg = new SpeechSynthesisUtterance(texto);
     msg.lang = "pt-BR";
+
+    const vozes = window.speechSynthesis.getVoices();
+    const vozAlfred = vozes.find(
+      (voz) =>
+        (voz.lang === "pt-BR" || voz.lang === "pt_BR") &&
+        (voz.name.includes("Daniel") ||
+          voz.name.includes("Google português") ||
+          voz.name.includes("Male")),
+    );
+
+    if (vozAlfred) {
+      msg.voice = vozAlfred;
+    }
+
+    msg.pitch = 0.8;
+    msg.rate = 0.9;
+
     msg.onstart = () => {
       const loopFala = () => {
         mudarFace("fala", Math.random() * 50 + 20);
